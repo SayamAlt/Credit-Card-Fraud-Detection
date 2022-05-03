@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<style>
+        body {
+            text-align: center;
+        }
+        .navbar {
+            background-color: lightcyan;
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+        
+        a {
+            color: #f1f9f9;
+        }
+        
+        a:hover {
+            color: #f0f0f0;
+          }
+          
+        .predict-dec{
+            color:black;
+        }
+
+        h1 {
+            color: crimson;
+            font-size: 4 rem;
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+        hr {
+            border: 1px solid green;
+        }
+</style>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav ml-auto">
+                <h1>CREDIT CARD FRAUD DETECTION</h1>
+            </ul>
+        </nav>
+        
+        <hr /><br><br><br>
+        <div class="container">
+            <form action="/predict" method="post">
+    
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Credit Card Number:</h5>
+                                <input type="text" name="ccn" id="ccn" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Transaction Amount:</h5>
+                                <input type="text" name="ta" id="ta" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Source -->
+                                <h5 class="card-title">Gender(0-Female 1-Male):</h5>
+                                <select name="Gender" id="Gender" required="required">
+                                    <option value="female">0</option>
+                                    <option value="male">1</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Latitude:</h5>
+                                <input type="text" name="lat" id="lat" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Longitude:</h5>
+                                <input type="text" name="long" id="long" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">City Population:</h5>
+                                <input type="text" name="city_pop" id="city_pop" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Merchant Latitude:</h5>
+                                <input type="text" name="merch_lat" id="merch_lat" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Merchant Longitude:</h5>
+                                <input type="text" name="merch_long" id="merch_long" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">What was the reason for transaction?</h5>
+                                <select name="steps" required="required">
+                                    <option value="0">Food & Dining</option>
+                                    <option value="1">Gas Transport</option>
+                                    <option value="2">Grocery Net</option>
+                                    <option value="3">Grocery Point of Sale(POS)</option>
+                                    <option value="4">Health & Fitness</option>
+                                    <option value="5">Home</option>
+                                    <option value="6">Kids & Pets</option>
+                                    <option value="7">Miscellaneous Net</option>
+                                    <option value="8">Miscellaneous Point of Sale(POS)</option>
+                                    <option value="9">Personal Care</option>
+                                    <option value="10">Shopping Net</option>
+                                    <option value="11">Shopping Point of Sale(POS)</option>
+                                    <option value="12">Travel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- Submit -->
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+    
+            <br>
+            <br>
+            <h3 class="predict-dec">{{ prediction_text }}</h3> 
+            <br>
+            <p>Copyrights @Sayam Kumar</p>  
+        </div>
+    
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    </nav>
+</body>
+</html>
