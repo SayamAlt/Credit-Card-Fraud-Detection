@@ -1,5 +1,6 @@
 # Credit-Card-Fraud-Detection
 
+![Credit Card Fraud Detection](https://miro.medium.com/max/640/0*_6WEDnZubsQfTMlY.png)
 ![Credit Card Fraud Detection](https://dataaspirant.com/wp-content/uploads/2020/09/1-Credit-card-fraud-detection-with-classification-algorithms.png)
 
 ## Deployed Web Application
