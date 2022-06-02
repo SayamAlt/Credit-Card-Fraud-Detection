@@ -1,7 +1,9 @@
 # Credit-Card-Fraud-Detection
 
+![Credit Card Fraud Detection](https://www.google.com/imgres?imgurl=https%3A%2F%2Fmiro.medium.com%2Fmax%2F640%2F0*_6WEDnZubsQfTMlY.png&imgrefurl=https%3A%2F%2Fmedium.com%2Fanalytics-vidhya%2Fcredit-card-fraud-detection-c66d1399c0b7&tbnid=1PZKLDozRUbgrM&vet=12ahUKEwjJs6zEi4_4AhX2_jgGHYALChAQMygAegUIARDVAQ..i&docid=J-4icRveNgIpQM&w=640&h=360&q=Credit%20Card%20Fraud%20Detection%20image&client=firefox-b-d&ved=2ahUKEwjJs6zEi4_4AhX2_jgGHYALChAQMygAegUIARDVAQ)
+
+## Deployed Web Application
 Web Application Link: https://ccfd-sayam-heroku.herokuapp.com/
-<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fmiro.medium.com%2Fmax%2F640%2F0*_6WEDnZubsQfTMlY.png&imgrefurl=https%3A%2F%2Fmedium.com%2Fanalytics-vidhya%2Fcredit-card-fraud-detection-c66d1399c0b7&tbnid=1PZKLDozRUbgrM&vet=12ahUKEwjJs6zEi4_4AhX2_jgGHYALChAQMygAegUIARDVAQ..i&docid=J-4icRveNgIpQM&w=640&h=360&q=Credit%20Card%20Fraud%20Detection%20image&client=firefox-b-d&ved=2ahUKEwjJs6zEi4_4AhX2_jgGHYALChAQMygAegUIARDVA"></img>
 
 ## About the Dataset
 This is a simulated credit card transaction dataset containing legitimate and fraud transactions from the duration 1st Jan 2019 - 31st Dec 2020. It covers credit cards of 1000 customers doing transactions with a pool of 800 merchants.
